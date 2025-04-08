@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5hixqma1xskc"]
+[gd_scene load_steps=5 format=3 uid="uid://b5hixqma1xskc"]
 
 [ext_resource type="FontFile" uid="uid://wr23niwkdna8" path="res://fonts/Xolonium-Regular.ttf" id="1_e0onf"]
 [ext_resource type="Script" uid="uid://bpweufodil6ud" path="res://Scripts/hud.gd" id="1_fccik"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_fccik"]
+action = &"start_game"
+event_index = 1
+
+[sub_resource type="Shortcut" id="Shortcut_bjfho"]
+events = [SubResource("InputEventAction_fccik")]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_fccik")
@@ -14,6 +21,9 @@ offset_left = -22.5
 offset_right = 22.5
 offset_bottom = 78.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8, 0.647059, 0.407843, 1)
+theme_override_colors/font_outline_color = Color(0.684872, 0.648868, 0.60306, 1)
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("1_e0onf")
 theme_override_font_sizes/font_size = 64
 text = "0"
@@ -31,6 +41,9 @@ offset_bottom = 79.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.642192, 0.26071, 0.740958, 1)
+theme_override_colors/font_outline_color = Color(0.700111, 0.564685, 0.711858, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_e0onf")
 theme_override_font_sizes/font_size = 64
 text = "DODGE THE CREEPS!"
@@ -53,8 +66,12 @@ grow_vertical = 0
 scale = Vector2(1.07431, 1.19798)
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0.791541, 0.747271, 0.74007, 1)
+theme_override_colors/font_color = Color(0.799845, 0.648864, 0.405941, 1)
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("1_e0onf")
 theme_override_font_sizes/font_size = 64
+shortcut = SubResource("Shortcut_bjfho")
 text = "start"
 
 [node name="MessageTimer" type="Timer" parent="."]
